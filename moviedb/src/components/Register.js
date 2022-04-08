@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import { register } from "../services/Api";
 
 const Register = ({ onRegister }) => {
@@ -35,19 +36,20 @@ const Register = ({ onRegister }) => {
                 <div className="form-items">
                     <h3>Register</h3>
                     <form className="requires-validation" onSubmit={onRegisterHandler}>
-                        <input className="form-control" type="email" id="email" name="email"  required />
+                        <input className="form-control" type="email" id="email" name="email" defaultValue="Email" required />
                         {/* <div className="invalid-feedback">
                             Email is required!
                         </div> */}
-                        <input className="form-control" type="password" id="password" name="password"  required />
+                        <input className="form-control" type="password" id="password" name="password" defaultValue="Password" required />
                         {/* <div className="invalid-feedback">
                             Password is required!
                         </div> */}
-                        <input className="form-control" type="password" id="repass" name="repass" required />
+                        <input className="form-control" type="password" id="repass" name="repass" defaultValue="Password" required />
                         {/* <div className="invalid-feedback">
                             Passwords must match!
                         </div> */}
                         <button id="submit" type="submit" className="button">Register</button>
+                        <span id="have__account">Already have an account? Click <Link to="/login">here</Link></span>
                     </form>
                 </div>
             </div>

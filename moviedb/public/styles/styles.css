@@ -1,226 +1,235 @@
 #hero {
-    height: 80vh;
-    background-image: url("https://image.shutterstock.com/image-vector/cinema-film-strip-wave-reel-600w-1484469773.jpg");
-    background-repeat: none;
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-    margin-bottom: 40px;
-  }
-  
-  /*NAVIGATION*/
-  
-  .navbar-dashboard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 4vh;
-  }
-  
-  .navbar {
-    height: 8vh;
-    background-color: #001126
-  }
-  
-  
-  #welcome__span {
-    color: white;
-  }
-  
-  /*COMMON*/
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: white;
-  }
-  
-  body {
-    background-color: #001126;
-  }
-  
-  .button {
-    text-decoration: none;
-    background-color: #e2e1de;
-    color: black;
-    border-radius: 8px;
-    padding: 3px 10px;
-    margin: 0 40px;
-  }
-  
-  img {
-    width: 250px;
-  }
-  
-  
-  /*FOOTER*/
-  .footer {
-    color: black;
-    background-color: white;
-    text-align: center;
-    padding-top: 5vh;
-    height: 10vh;
-  
-  }
-  
-  /*ITEM*/
-  
-  .flex__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .flex__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;;
-  }
-  
-  .flex__item a {
-    width: 20%;
-  }
-  
-  /*LOGIN REGISTER CREATE EDIT*/
-  
-  .form-holder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-  }
-  
-  .form-holder .form-content {
-    position: relative;
-    text-align: center;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: 60px;
-  }
-  
-  .form-content .form-items {
-    border: 3px solid #fff;
-    padding: 40px;
-    display: inline-block;
-    width: 100%;
-    min-width: 540px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    text-align: left;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-  }
-  
-  .form-content h3 {
-    color: #fff;
-    text-align: left;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  
-  .form-content h3.form-title {
-    margin-bottom: 30px;
-  }
-  
-  .form-content p {
-    color: #fff;
-    text-align: left;
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
-    width: 90%;
-    padding: 9px 20px;
-    text-align: left;
-    border: 0;
-    outline: 0;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    margin-top: 16px;
-  }
-  
-  
-  .btn-primary {
-    background-color: #6C757D;
-    outline: none;
-    border: 0px;
-    box-shadow: none;
-  }
-  
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: #495056;
-    outline: none !important;
-    border: none !important;
-    box-shadow: none;
-  }
-  
-  .form-content textarea {
-    position: static !important;
-    width: 100%;
-    padding: 8px 20px;
-    border-radius: 6px;
-    text-align: left;
-    background-color: #fff;
-    border: 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    outline: none;
-    resize: none;
-    height: 120px;
-    -webkit-transition: none;
-    transition: none;
-    margin-bottom: 14px;
-  }
-  
-  .form-content textarea:hover, .form-content textarea:focus {
-    border: 0;
-    background-color: #ebeff8;
-    color: #8D8D8D;
-  }
-  
-  .mv-up {
-    margin-top: -9px !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .invalid-feedback {
-    color: #ff606e;
-  }
-  
-  #submit {
-    margin-top: 20px;
-    border-radius: 12px;
-  }
-  
-  /*DETAILS*/
-  .details {
-    display: flex;
-    flex-direction: row;
-    color: white;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .movie-description {
-    width: 40%;
-    text-align: justify;
-    margin-left: 30px;
-  }
+  height: 70vh;
+  background-image: url("https://image.shutterstock.com/image-vector/cinema-film-strip-wave-reel-600w-1484469773.jpg");
+  background-repeat: none;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/*NAVIGATION*/
+
+.navbar-dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 4vh;
+}
+
+.navbar {
+  height: 8vh;
+  background-color: #001126
+}
+
+
+#welcome__span {
+  color: white;
+}
+
+/*COMMON*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+body {
+  background-color: #001126;
+}
+
+.button {
+  text-decoration: none;
+  background-color: #e2e1de;
+  color: black;
+  border-radius: 8px;
+  padding: 3px 10px;
+  margin: 0 40px;
+}
+
+img {
+  width: 250px;
+}
+
+
+/*FOOTER*/
+.footer {
+  color: black;
+  background-color: white;
+  text-align: center;
+  padding-top: 5vh;
+  height: 10vh;
+
+}
+
+/*ITEM*/
+
+.flex__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ;
+}
+
+.flex__item a {
+  width: 20%;
+}
+
+/*LOGIN REGISTER CREATE EDIT*/
+#have__account {
+  color: white;
+}
+
+#have__account a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.form-holder .form-content {
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.form-content .form-items {
+  border: 3px solid #fff;
+  padding: 40px;
+  display: inline-block;
+  width: 100%;
+  min-width: 540px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: left;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.form-content h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+  margin-bottom: 30px;
+}
+
+.form-content p {
+  color: #fff;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+  width: 90%;
+  padding: 9px 20px;
+  text-align: left;
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #8D8D8D;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+
+.btn-primary {
+  background-color: #6C757D;
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #495056;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+.form-content textarea {
+  position: static !important;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-align: left;
+  background-color: #fff;
+  border: 0;
+  font-size: 15px;
+  font-weight: 300;
+  color: #8D8D8D;
+  outline: none;
+  resize: none;
+  height: 120px;
+  -webkit-transition: none;
+  transition: none;
+  margin-bottom: 14px;
+}
+
+.form-content textarea:hover, .form-content textarea:focus {
+  border: 0;
+  background-color: #ebeff8;
+  color: #8D8D8D;
+}
+
+.mv-up {
+  margin-top: -9px !important;
+  margin-bottom: 8px !important;
+}
+
+.invalid-feedback {
+  color: #ff606e;
+}
+
+#submit {
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+/*DETAILS*/
+.details {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-description {
+  width: 40%;
+  text-align: justify;
+  margin-left: 30px;
+}

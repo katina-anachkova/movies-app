@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Login from './components/Login';
 import Register from './components/Register';
 import Footer from './components/Footer';
+import { logout } from './services/Api';
 
 function App() {
   const [userInfo, setUserInfo] = useState({ isAuthenticated: false, user: {} });
@@ -33,7 +34,6 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/login' element={<Login onLogin={onLogin}/>}/>
             <Route path='/register' element={<Register onRegister={onRegister}/>}/>
-            {/* <Route path='/logout' element={<L/>}/> */}
           </Routes>
         </main>
         <Footer />
