@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import AuthCtx from "../context/AuthCtx";
 import { logout } from "../services/Api";
  
-const Header = () => {
+const Header = ({isAuthenticated}) => {
     const userInfo = useContext(AuthCtx);
-    console.log(userInfo)
+    // console.log(userInfo)
     let guestNav = <div id="guest">
         <Link className="button" to="/login">Login</Link>
         <Link className="button" to="/register">Register</Link>
     </div>
 
     let userNav = <div id="user">
-        <span>Welcome, {userInfo.user.email}</span>
+        <span id="user__info">Welcome, {userInfo.user.email}</span>
         <Link className="button" to="/my-movies">My Movies</Link>
         <Link className="button" to="/create">Add new</Link>
         <Link className="button" onClick={logout} to="/">Logout</Link>
@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="navbar">
                 <section className="navbar-dashboard">
                     <Link className="button" to="/">Home</Link>
-                    {sessionStorage.length > 0 && userInfo.user.isAuthenticated
+                    { userInfo.user.isAuthenticated
                         ? userNav
                         : guestNav
                     }

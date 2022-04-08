@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Footer from './components/Footer';
 import { logout } from './services/Api';
+import Create from './components/Create';
 
 function App() {
   const [userInfo, setUserInfo] = useState({ isAuthenticated: false, user: {} });
@@ -32,6 +33,7 @@ function App() {
         <main id="site-content">
           <Routes>
             <Route path='/' element={<Home/>}/>
+            <Route path='/create' element={<Create/>}/>
             <Route path='/login' element={<Login onLogin={onLogin}/>}/>
             <Route path='/register' element={<Register onRegister={onRegister}/>}/>
           </Routes>

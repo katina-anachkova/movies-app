@@ -10,7 +10,6 @@ const Register = ({ onRegister }) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
-        console.log(formData)
         const email = formData.get('email')
         const password = formData.get('password')
         const repass = formData.get('repass')

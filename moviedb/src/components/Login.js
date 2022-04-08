@@ -19,8 +19,15 @@ const Login = ({ onLogin }) => {
         }
 
         login(email, password);
+
         onLogin({ email, password, isAuthenticated });
-        navigate('/');
+
+        setTimeout(() => {
+            if (sessionStorage.length > 0) {
+                navigate('/');
+            }
+        }, 1500);
+
     }
 
     return (
@@ -38,7 +45,7 @@ const Login = ({ onLogin }) => {
                             Password is required!
                         </div> */}
                         <button id="submit" type="submit" className="button" value="login">Login</button>
-                        <span id="have__account">If you don't have profile click <Link to="/register">here</Link></span>
+                    <span id="have__account">If you don't have profile click <Link to="/register">here</Link></span>
                     </form>
 
                 </div>
