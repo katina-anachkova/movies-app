@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--NAVIGATION-->
+    <header id="site-header">
+        <nav class="navbar">
+            <section class="navbar-dashboard">
+                <a class="button" href="/">Home</a>
+                <div id="guest">
+                    <a class="button" href="/login">Login</a>
+                    <a class="button" href="/register">Register</a>
+                </div>
+                <div id="user">
+                    <span id="welcome__span">Welcome, {userInfo.user.email}</span>
+                    <a class="button" href="/my-movies">My movies</a>
+                    <a class="button" href="/create">New</a>
+                    <a class="button" href="/logout">Logout</a>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <!--HERO-->
+    <section id="hero"></section>
+    <!--DASHBOARD-->
+    <section class="flex__list">
+        <li class="flex__item">
+            <h3>Title</h3>
+            <p class="img"><img alt=""
+                    src="https://image.shutterstock.com/image-vector/cinema-magazine-cover-design-3d-600w-1356321809.jpg" />
+            </p>
+            <a class="button" href="/details">Details</a>
+        </li>
+        <li class="flex__item">
+            <h3>Title</h3>
+            <p class="img"><img alt=""
+                    src="https://image.shutterstock.com/image-vector/cinema-magazine-cover-design-3d-600w-1356321809.jpg" />
+            </p>
+            <a class="button" href="/details">Details</a>
+        </li>
+        <li class="flex__item">
+            <h3>Title</h3>
+            <p class="img"><img alt=""
+                    src="https://image.shutterstock.com/image-vector/cinema-magazine-cover-design-3d-600w-1356321809.jpg" />
+            </p>
+            <a class="button" href="/details">Details</a>
+        </li>
+        <li class="flex__item">
+            <h3>Title</h3>
+            <p class="img"><img alt=""
+                    src="https://image.shutterstock.com/image-vector/cinema-magazine-cover-design-3d-600w-1356321809.jpg" />
+            </p>
+            <a class="button" href="/details">Details</a>
+        </li>
+        <li class="flex__item">
+            <h3>Title</h3>
+            <p class="img"><img alt=""
+                    src="https://image.shutterstock.com/image-vector/cinema-magazine-cover-design-3d-600w-1356321809.jpg" />
+            </p>
+            <a class="button" href="/details">Details</a>
+        </li>
+    </section>
+    <!--LOGIN-->
+    <div class="form-holder">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Login</h3>
+                <form class="requires-validation">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail" required>
+                    <div class="invalid-feedback">
+                        Email is required!
+                    </div>
+                    <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    <div class="invalid-feedback">
+                        Password is required!
+                    </div>
+                    <button id="submit" type="submit" class="button">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--REGISTER-->
+    <div class="form-holder">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Register</h3>
+                <form class="requires-validation">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail" required>
+                    <div class="invalid-feedback">
+                        Email is required!
+                    </div>
+                    <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    <div class="invalid-feedback">
+                        Password is required!
+                    </div>
+                    <input class="form-control" type="password" name="repass" placeholder="Repeat password" required>
+                    <div class="invalid-feedback">
+                        Passwords must match!
+                    </div>
+                    <button id="submit" type="submit" class="button">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--CREATE-->
+    <div class="form-holder">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Add new movie</h3>
+                <form class="requires-validation">
+                    <input class="form-control" type="text" name="title" placeholder="Title" required>
+                    <div class="invalid-feedback">
+                        Title is required!
+                    </div>
+                    <input class="form-control" type="text" name="description" placeholder="Description" required>
+                    <div class="invalid-feedback">
+                        Description is required!
+                    </div>
+                    <input class="form-control" type="text" name="image" placeholder="Image link" required>
+                    <div class="invalid-feedback">
+                        Image link is required!
+                    </div>
+                    <button id="submit" type="submit" class="button">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--EDIT-->
+    <div class="form-holder">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Edit</h3>
+                <form class="requires-validation">
+                    <input class="form-control" type="text" name="title" placeholder="Title">
+
+                    <input class="form-control" type="text" name="description" placeholder="Description">
+
+                    <input class="form-control" type="text" name="image" placeholder="Image link">
+
+                    <button id="submit" type="submit" class="button">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--DETAILS-->
+    <section id="details-page" class="details">
+        <div class="book-information">
+            <p class="img"><img
+                src="https://image.shutterstock.com/image-vector/cinema-magazine-cover-design-3d-600w-1356321809.jpg" />
+            </p>
+            <!-- <div class="actions">
+                <BookControls match={match} />
+                {showLikeButton
+                    ? <button class="button" onClick={onLike} to="#">Like</button>
+                    : null
+                }
+                <div class="likes">
+                    <img class="hearts" src="/images/heart.png" />
+                    <span id="total-likes">Likes: {likes}</span>
+                </div>
+            </div> -->
+        </div>
+        <div class="movie-description">
+            <h3>Title</h3>
+            <h3>Description:</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, iusto nemo voluptates et expedita dolorum laboriosam provident incidunt fugit unde placeat nisi nobis quam, fugiat veniam ipsam quisquam aliquid amet necessitatibus harum ipsum, enim quas. Praesentium minus soluta facere optio quam necessitatibus voluptas aperiam animi non consequuntur, hic itaque expedita quaerat autem. Facere, numquam reiciendis quo laudantium assumenda nostrum quisquam. Odio similique, neque facilis perferendis ea architecto numquam. Aperiam quo dolore placeat assumenda facilis consectetur eum perspiciatis, quod harum neque, maiores deleniti illo quibusdam. Tempora eaque quia exercitationem eius assumenda sunt, pariatur ad explicabo fugiat, ipsam consequatur facilis harum. Cumque?</p>
+        </div>
+    </section>
+    <footer>
+        <p class="footer"> This website is created for training purposes</p>
+    </footer>
+</body>
+
+</html>
