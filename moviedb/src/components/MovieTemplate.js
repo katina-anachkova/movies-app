@@ -7,7 +7,7 @@ const MovieTemplate = ({ movie }) => {
             <p className="img"><img alt="movie cover"
                 src={movie.image} />
             </p>
-            <Link className="button" to="/details">Details</Link>
+            <Link className="button" to={`/details/${movie._id}`}>Details</Link>
         </li>
     );
 }

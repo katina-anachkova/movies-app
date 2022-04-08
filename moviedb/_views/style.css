@@ -219,8 +219,16 @@ img {
     align-items: center;
 }
 
-.movie-description {
-    width: 40%;
+.details{
+    /* width: 40%;
     text-align: justify;
-    margin-left: 30px;
+    margin-left: 30px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie__image {
+    width: 300px;
 }

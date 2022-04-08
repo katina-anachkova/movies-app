@@ -3,13 +3,14 @@ import * as util from './util.js';
 import AuthCtx from './context/AuthCtx.js';
 import Header from './components/Header';
 import Home from './components/Home';
-import { Route,Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 import { useState } from 'react';
 import Login from './components/Login';
 import Register from './components/Register';
 import Footer from './components/Footer';
 import { logout } from './services/Api';
 import Create from './components/Create';
+import MovieDetails from './components/MovieDetails';
 
 function App() {
   const [userInfo, setUserInfo] = useState({ isAuthenticated: false, user: {} });
@@ -32,10 +33,11 @@ function App() {
         <Header userInfo={userInfo} />
         <main id="site-content">
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/create' element={<Create/>}/>
-            <Route path='/login' element={<Login onLogin={onLogin}/>}/>
-            <Route path='/register' element={<Register onRegister={onRegister}/>}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/create' element={<Create />} />
+            <Route path="/details/:id" element={<MovieDetails/>} />
+            <Route path='/login' element={<Login onLogin={onLogin} />} />
+            <Route path='/register' element={<Register onRegister={onRegister} />} />
           </Routes>
         </main>
         <Footer />
