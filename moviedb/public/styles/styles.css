@@ -79,7 +79,8 @@ img {
   align-items: center;
   margin: 30px;
   border: 3px solid white;
-  padding: 30px 20px;
+  border-radius: 12px;
+  padding: 30px 40px;
 }
 
 .flex__item h3{
@@ -88,6 +89,10 @@ img {
 
 .flex__item a {
   width: 20%;
+}
+
+.flex__item img {
+  border-radius: 12px;
 }
 
 /*LOGIN REGISTER CREATE EDIT*/
@@ -232,13 +237,38 @@ img {
 .details {
   display: flex;
   flex-direction: row;
-  color: white;
   justify-content: center;
   align-items: center;
+  background: rgb(0,32,73);
+  background: linear-gradient(90deg, rgba(0,32,73,1) 12%, rgba(0,19,45,1) 55%, rgba(0,13,29,1) 100%); 
+  color: white;
+  margin: 100px 100px;
+  padding: 100px 0;
+  border-radius: 12px;
 }
 
-.movie-description {
-  width: 40%;
+.movie__image {
+  width: 300px;
+  border-radius: 12px;
+
+}
+
+.movie__information {
+  display:flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 0px 60px;
+}
+
+.movie__description {
   text-align: justify;
-  margin-left: 30px;
+}
+
+.movie__description p {
+  margin-right: 60px;
+}
+
+a.button.controls {
+  margin-top: 20px;
 }

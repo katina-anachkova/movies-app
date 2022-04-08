@@ -11,25 +11,25 @@ const MovieDetailsControls = () => {
     const params = useParams();
 
     const userData = getUserData();
-    const isOwner = userData && userData.id == movie._ownerId;
+    const isOwner = userData && userData.id == movie.owner;
 
     useEffect(() => {
-        movieService.getOne(params.movieId)
+        movieService.getOne(params.id)
             .then(movie => {
                 setMovie(movie);
             });
     }, [])
 
     const onDelete = () => {
-        setMovie(movieService.getOne(params.movieId));
-        movieService.deleteMovie(params.movieId)
-            .then(navigate.replace('/'));
+        setMovie(movieService.getOne(params.id));
+        movieService.deleteMovie(params.id)
+            .then(navigate('/'));
     }
 
     return (
         isOwner
-            ? <><Link to={`/edit/${movie._id}`} className="button">Edit</Link>
-                <Link to="#" onClick={onDelete} className="button">Delete</Link>
+            ? <><Link to={`/edit/${movie._id}`} className="button controls">Edit</Link>
+                <Link to="#" onClick={onDelete} className="button controls">Delete</Link>
             </>
             : null
     );

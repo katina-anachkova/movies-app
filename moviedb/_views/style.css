@@ -217,18 +217,16 @@ img {
     color: white;
     justify-content: center;
     align-items: center;
-}
-
-.details{
-    /* width: 40%;
-    text-align: justify;
-    margin-left: 30px; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 70vw;
 }
 
 .movie__image {
     width: 300px;
+}
+
+.movie__information {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

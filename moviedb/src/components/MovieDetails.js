@@ -15,7 +15,7 @@ const MovieDetails = () => {
     // const [likes, setLikes] = useState(0);
     // const [hasLiked, setHasLiked] = useState(0);
 
-    const isOwner = userData && userData.id == movie._ownerId;
+    const isOwner = userData && userData.id == movie.owner;
     // const showLikeButton = userData != null && isOwner == false && hasLiked == false;
     const movieId = params.id;
 
@@ -50,13 +50,12 @@ const MovieDetails = () => {
     }
 
     return (
-        <section id="movie__details">
             <section id="details__page" className="details">
                 <div className="movie__information">
                     <img className="movie__image" src={movie.image} />
 
                     <div className="actions">
-                        {/* <MovieControls /> */}
+                        <MovieControls />
                         {/* {showLikeButton
                             ? <button className="button" onClick={onLike} to="#">Like</button>
                             : null
@@ -73,7 +72,6 @@ const MovieDetails = () => {
                     <p>{movie.description}</p>
                 </div>
             </section>
-        </section >
     );
 }
 
