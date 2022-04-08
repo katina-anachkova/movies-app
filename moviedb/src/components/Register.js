@@ -9,9 +9,10 @@ const Register = ({ onRegister }) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
-        const email = formData.get('email').trim();
-        const password = formData.get('password').trim();
-        const repass = formData.get('confirm-pass').trim();
+        console.log(formData)
+        const email = formData.get('email')
+        const password = formData.get('password')
+        const repass = formData.get('repass')
         const isAuthenticated = true;
 
         if (email == '' || password == '' || repass == '') {
@@ -29,24 +30,24 @@ const Register = ({ onRegister }) => {
 
 
     return (
-        <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items">
+        <div className="form-holder">
+            <div className="form-content">
+                <div className="form-items">
                     <h3>Register</h3>
-                    <form class="requires-validation" onsubmit={onRegisterHandler}>
-                        <input class="form-control" type="email" id="email" name="email" placeholder="E-mail" required />
-                        <div class="invalid-feedback">
+                    <form className="requires-validation" onSubmit={onRegisterHandler}>
+                        <input className="form-control" type="email" id="email" name="email"  required />
+                        {/* <div className="invalid-feedback">
                             Email is required!
-                        </div>
-                        <input class="form-control" type="password" id="password" name="password" placeholder="Password" required />
-                        <div class="invalid-feedback">
+                        </div> */}
+                        <input className="form-control" type="password" id="password" name="password"  required />
+                        {/* <div className="invalid-feedback">
                             Password is required!
-                        </div>
-                        <input class="form-control" type="password" id="repass" name="repass" placeholder="Repeat password" required />
-                        <div class="invalid-feedback">
+                        </div> */}
+                        <input className="form-control" type="password" id="repass" name="repass" required />
+                        {/* <div className="invalid-feedback">
                             Passwords must match!
-                        </div>
-                        <button id="submit" type="submit" class="button">Register</button>
+                        </div> */}
+                        <button id="submit" type="submit" className="button">Register</button>
                     </form>
                 </div>
             </div>

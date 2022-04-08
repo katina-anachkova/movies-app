@@ -6,6 +6,8 @@ import Home from './components/Home';
 import { Route,Routes } from 'react-router';
 import { useState } from 'react';
 import Login from './components/Login';
+import Register from './components/Register';
+import Footer from './components/Footer';
 
 function App() {
   const [userInfo, setUserInfo] = useState({ isAuthenticated: false, user: {} });
@@ -29,9 +31,12 @@ function App() {
         <main id="site-content">
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/login' element={<Login/>}/>
+            <Route path='/login' element={<Login onLogin={onLogin}/>}/>
+            <Route path='/register' element={<Register onRegister={onRegister}/>}/>
+            {/* <Route path='/logout' element={<L/>}/> */}
           </Routes>
         </main>
+        <Footer />
       </div>
     </AuthCtx.Provider>
   );

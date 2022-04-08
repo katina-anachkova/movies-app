@@ -25,6 +25,7 @@ const Login = ({ onLogin }) => {
         if (sessionStorage.length > 0) {
             navigate('/');
         }
+
     }
     
     return (
@@ -34,13 +35,13 @@ const Login = ({ onLogin }) => {
                     <h3>Login</h3>
                     <form className="requires-validation" onSubmit={onLoginHandler}>
                         <input className="form-control" type="email" name="email" placeholder="E-mail" required />
-                        <div className="invalid-feedback">
+                        {/* <div className="invalid-feedback">
                             Email is required!
-                        </div>
+                        </div> */}
                         <input className="form-control" type="password" name="password" id="password" placeholder="Password" required />
-                        <div className="invalid-feedback">
+                        {/* <div className="invalid-feedback">
                             Password is required!
-                        </div>
+                        </div> */}
                         <button id="submit" type="submit" className="button" value="login">Login</button>
                     </form>
                 </div>
