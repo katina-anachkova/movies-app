@@ -23,13 +23,13 @@ const MovieDetailsControls = () => {
     const onDelete = () => {
         setMovie(movieService.getOne(params.id));
         movieService.deleteMovie(params.id)
-            .then(navigate('/'));
+            // .then(navigate('/'));
     }
 
     return (
         isOwner
             ? <><Link to={`/edit/${movie._id}`} className="button controls">Edit</Link>
-                <Link to="#" onClick={onDelete} className="button controls">Delete</Link>
+                <Link to="/" onClick={onDelete} className="button controls">Delete</Link>
             </>
             : null
     );

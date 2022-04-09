@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router";
-import * as movieService from '../services/MovieService.js'
+import * as movieService from '../services/MovieService';
 
-const Create = () => {
-
+const CreateMovie = () => {
     let navigate = useNavigate();
 
     const onCreate = (e) => {
+
         let formData = new FormData(e.target);
 
         let title = formData.get('title').trim();
@@ -17,10 +17,12 @@ const Create = () => {
             description,
             image
         });
+
         navigate('/');
     }
 
     return (
+
         <div className="form-holder">
             <div className="form-content">
                 <div className="form-items">
@@ -46,4 +48,4 @@ const Create = () => {
     )
 }
 
-export default Create;
+export default CreateMovie;

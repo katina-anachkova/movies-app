@@ -1,4 +1,4 @@
-import {clearUserData, getUserData, setUserData} from "../util.js";
+import { clearUserData, getUserData, setUserData } from "../util.js";
 
 const hostname = 'http://localhost:3030';
 
@@ -35,7 +35,7 @@ function createOptions(method = 'get', data) {
     }
 
     const userData = getUserData();
-    
+
     if (userData) {
         options.headers['X-Authorization'] = userData.token;
     }
@@ -60,7 +60,7 @@ export function del(url) {
 }
 
 export async function login(email, password) {
-    const result = await post('/users/login', {email, password});
+    const result = await post('/users/login', { email, password });
 
     const userData = {
         email: result.email,
@@ -75,7 +75,7 @@ export async function login(email, password) {
 }
 
 export async function register(email, password) {
-    const result = await post('/users/register', {email, password});
+    const result = await post('/users/register', { email, password });
 
     const userData = {
         email: result.email,
@@ -89,8 +89,8 @@ export async function register(email, password) {
     return result;
 }
 
+
 export async function logout() {
-    get('/users/logout');
     clearUserData();
 }
 
