@@ -12,9 +12,9 @@ export async function getOne(id) {
     return api.get(`/data/catalog/` + id)
 }
 
-export async function getMyMovies(userId) {
-    return api.get(`/data/catalog?where=owner%3D%22${userId}%22`)
-}
+// export async function getMyMovies(userId) {
+//     return api.get(`/data/catalog?where=owner%3D%22${userId}%22`)
+// }
 
 export async function createMovie(movie) {
     return api.post('/data/catalog', movie)
@@ -28,6 +28,9 @@ export async function deleteMovie(id) {
     return api.del('/data/catalog/' + id)
 }
 
+export async function addFavourite(body){
+    return api.post('/data/favourites', body);
+}
 // export async function getLikesByMovieId(movieId) {
 //     return api.get(`/data/catalog/likes?where=movieId%3D%22${movieId}%22&distinct=_ownerId&count`)
 // }

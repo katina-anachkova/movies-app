@@ -2,9 +2,10 @@ import './App.css';
 import * as util from './util.js';
 import AuthCtx from './context/AuthCtx.js';
 import Header from './components/Header';
-import Home from './components/Home';
-import { Route, Routes, useNavigate } from 'react-router';
-import { useState, useSyncExternalStore } from 'react';
+import Dashboard from './components/Dashboard';
+import Catalog from './components/Catalog';
+import { Route, Routes } from 'react-router';
+import { useState } from 'react';
 import Login from './components/Login';
 import Register from './components/Register';
 import Footer from './components/Footer';
@@ -29,13 +30,15 @@ function App() {
     util.clearUserData();
   }
 
+
   return (
     <AuthCtx.Provider value={userInfo}>
       <div id="container">
         <Header userInfo={userInfo} onLogout={onLogout} />
         <main id="site-content">
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Catalog />} />
+            <Route path='/dashboard' element={<Dashboard user={userInfo}/>} />
             <Route path='/create' element={<CreateMovie />} />
             <Route path="/details/:id" element={<MovieDetails />} />
             <Route path='/login' element={<Login onLogin={onLogin} />} />

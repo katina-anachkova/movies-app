@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as movieService from '../services/MovieService.js';
+import * as favouritesService from '../services/FavouritesService.js';
 import MovieControls from "./MovieControls";
 import { getUserData } from '../util.js';
 
@@ -23,15 +24,19 @@ const MovieDetails = () => {
     }, [movie.likes]);
 
     async function onFav() {
-        await movieService.getOne(params.id).then((result) => {
-            result.likes.push(userData.id);
-            setIsFav(true)
-            });
 
-        // await movieService.getOne(params.id).then((result) => {
-        //     Object.entries(result)[4][1].push(userData.id);
-        //     setIsFav(true)
-        //     });
+        let owner = userData.id;
+
+        await movieService.getOne(params.id).then((result) => {
+            result.likes.push(owner);
+            setIsFav(true)
+        });//non-persisting
+
+        console.log(movie, owner)// obj + id
+        favouritesService.addFavourite({
+            movie, owner
+        })            
+    
     }
 
     return (
