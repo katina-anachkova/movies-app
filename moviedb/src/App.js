@@ -1,17 +1,17 @@
 import './App.css';
 import * as util from './util.js';
 import AuthCtx from './context/AuthCtx.js';
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
-import Catalog from './components/Catalog';
+import Header from './components/core/Header';
+import Dashboard from './components/pages/Dashboard';
+import Catalog from './components/pages/Catalog';
 import { Route, Routes } from 'react-router';
 import { useState } from 'react';
-import Login from './components/Login';
-import Register from './components/Register';
-import Footer from './components/Footer';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import Footer from './components/core/Footer';
 import { logout } from './services/Api';
-import MovieDetails from './components/MovieDetails';
-import CreateMovie from './components/Create';
+import MovieDetails from './components/pages/MovieDetails';
+import CreateMovie from './components/feature/Create';
 
 function App() {
 

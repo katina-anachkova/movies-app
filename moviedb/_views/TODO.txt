@@ -1,0 +1,7 @@
+- search nav + search page
+- remove from favourites
+- fix logout and favourites request
+- ratings
+- hide dashboard button
+- movie notes
+- add movies/ integrate with external database

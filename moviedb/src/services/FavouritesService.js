@@ -1,7 +1,7 @@
-import * as api from './Api.js';
+import * as api from '../services/Api';
 
-export async function getFavouritesByUser(userId) {
-    return api.get(`/data/favourites?where=owner%3D%22${userId}%22`)
+export async function getAllFavs() {
+    return api.get(`/data/favourites`);
 }
 
 export async function addFavourite(body){

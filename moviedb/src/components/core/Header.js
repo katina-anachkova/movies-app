@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import AuthCtx from "../context/AuthCtx";
-
+import AuthCtx from "../../context/AuthCtx.js"
 const Header = ({ onLogout }) => {
 
     const userInfo = useContext(AuthCtx);

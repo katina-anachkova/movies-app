@@ -1,42 +1,46 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import * as movieService from '../services/MovieService.js';
-import * as favouritesService from '../services/FavouritesService.js';
+import * as movieService from '../../services/MovieService.js';
+import * as favouritesService from '../../services/FavouritesService';
+import * as userService from '../../services/users';
 import MovieControls from "./MovieControls";
-import { getUserData } from '../util.js';
+import { getUserData } from '../../util.js';
 
 const MovieDetails = () => {
 
     const userData = getUserData();
     const params = useParams();
+    const movieId = params.id;
+    const owner = userData.id;
 
     const [movie, setMovie] = useState({});
-    const [isFav, setIsFav] = useState(0);
-
-    const showFavButton = userData != null && isFav == false;
-    const movieId = params.id;
+    let [showFav, setShowFav] = useState(true);
 
     useEffect(() => {
         movieService.getOne(movieId)
             .then(movie => {
                 setMovie(movie);
             });
-    }, [movie.likes]);
+    }, []);
 
     async function onFav() {
+        // console.log(owner, 'likes -> ', movie); OK
+        await favouritesService.addFavourite({
+            movie, owner //server-side -> movie is undefined
+        })
 
-        let owner = userData.id;
+        let allUsers = await userService.getAllUsers();
 
-        await movieService.getOne(params.id).then((result) => {
-            result.likes.push(owner);
-            setIsFav(true)
-        });//non-persisting
+        const actionUser = allUsers.filter(user => user._id === owner);
 
-        console.log(movie, owner)// obj + id
-        favouritesService.addFavourite({
-            movie, owner
-        })            
-    
+        actionUser[0]['favMovies'].push(movie);// non-persisting
+
+        
+        setShowFav = false;
+    }
+
+    async function onFavRemove() {//tbd
+        console.log('remove favourite')
     }
 
     return (
@@ -46,13 +50,10 @@ const MovieDetails = () => {
 
                 <div className="actions">
                     <MovieControls />
-                    {showFavButton
+                    {(showFav && userData != null)
                         ? <button className="button" onClick={onFav} to="#">Add to favourites</button>
-                        : null
+                        : <button className="button" onClick={onFavRemove} to="#">Remove from favourites</button>
                     }
-                    <div className="likes">
-                        <img className="hearts" src="/images/heart.png" />
-                    </div>
                 </div>
             </div>
             <div className="movie__description">

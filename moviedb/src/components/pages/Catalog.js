@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MovieTemplate from "./MovieTemplate";
-import * as movieService from '../services/MovieService';
+import * as movieService from '../../services/MovieService';
 
 const Catalog = () => {
     const [movies, setMovies] = useState([]);

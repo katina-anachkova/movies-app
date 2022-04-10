@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import * as movieService from '../services/MovieService';
+import * as movieService from '../../services/MovieService';
 
 const CreateMovie = () => {
     let navigate = useNavigate();
