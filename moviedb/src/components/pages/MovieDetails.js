@@ -24,9 +24,8 @@ const MovieDetails = () => {
     }, []);
 
     async function onFav() {
-        // console.log(owner, 'likes -> ', movie); OK
         await favouritesService.addFavourite({
-            movie, owner //server-side -> movie is undefined
+            movie, owner 
         })
 
         let allUsers = await userService.getAllUsers();
@@ -34,7 +33,7 @@ const MovieDetails = () => {
 
         const favMovies = actionUser[0]['favMovies'];
 
-        favMovies.push(movie);// non-persisting
+        favMovies.push(movie);
 
         let user = {
             email: userData.email,

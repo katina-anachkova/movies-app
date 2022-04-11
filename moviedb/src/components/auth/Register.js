@@ -45,7 +45,7 @@ const Register = ({ onRegister }) => {
                 </div>
             </div>
         </div>
-    )
+    );
 
 }
 

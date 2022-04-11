@@ -27,7 +27,6 @@ const Login = ({ onLogin }) => {
                 navigate('/');
             }
         }, 1500);
-
     }
 
     return (
@@ -43,11 +42,10 @@ const Login = ({ onLogin }) => {
                         <button id="submit" type="submit" className="button" value="login">Login</button>
                     <span id="have__account">If you don't have profile click <Link to="/register">here</Link></span>
                     </form>
-
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Login;

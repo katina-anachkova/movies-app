@@ -1,5 +1,5 @@
 #hero {
-  height: 70vh;
+  height: 60vh;
   background-image: url("../images/viber_image_2022-04-11_16-44-10-889.jpg");
   background-repeat: none;
   background-position: center center;
@@ -14,12 +14,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 4vh;
+  /* margin-top: 1vh; */
+  padding-top: 20px;
+  align-items: center;
 }
 
 .navbar {
-  height: 8vh;
-  background-color: #001126
+  height: 12vh;
+  background-color: #000c1b
 }
 
 #welcome__span {
@@ -37,7 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background-color: #001126;
+  background: rgb(73,0,69);
+background: linear-gradient(90deg, rgba(73,0,69,1) 12%, rgba(13,0,45,1) 55%, rgba(0,13,29,1) 100%); 
 }
 
 .button {
@@ -239,8 +242,10 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: rgb(0,32,73);
-  background: linear-gradient(90deg, rgba(0,32,73,1) 12%, rgba(0,19,45,1) 55%, rgba(0,13,29,1) 100%); 
+  /* background: rgb(0,32,73);
+  background: linear-gradient(90deg, rgba(0,32,73,1) 12%, rgba(0,19,45,1) 55%, rgba(0,13,29,1) 100%);  */
+  background: rgb(73,0,69);
+  background: linear-gradient(90deg, rgba(73,0,69,1) 12%, rgba(41,0,45,1) 55%, rgba(0,13,29,1) 100%); 
   color: white;
   margin: 100px 100px;
   padding: 100px 0;
@@ -271,9 +276,5 @@ img {
 
 a.button.controls {
   margin-top: 20px;
-}
-
-.hearts {
-  width: 25px;
 }
 

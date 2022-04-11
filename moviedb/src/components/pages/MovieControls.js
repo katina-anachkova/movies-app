@@ -10,7 +10,7 @@ const MovieDetailsControls = () => {
     const params = useParams();
 
     const userData = getUserData();
-   
+
     const isOwner = userData && userData.id == movie._ownerId;
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const MovieDetailsControls = () => {
             .then(movie => {
                 setMovie(movie);
             });
-    }, [])
+    }, []);
 
     const onDelete = () => {
         setMovie(movieService.getOne(params.id));
@@ -32,9 +32,6 @@ const MovieDetailsControls = () => {
                 <Link to="/" onClick={onDelete} className="button controls">Delete</Link>
             </>
             : null
-                   
-                   
-
     );
 }
 

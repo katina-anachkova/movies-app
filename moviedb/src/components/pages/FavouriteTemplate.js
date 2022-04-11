@@ -10,7 +10,6 @@ const FavouriteTemplate = ({ movie }) => {
             </p>
             <Link className="button" to={`/details/${movie._id}`}>Details</Link>
         </li>
-
     );
 }
 

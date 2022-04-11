@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import FavouriteTemplate from "./FavouriteTemplate";
 import { getUserData } from "../../util";
 import * as userService from '../../services/users';
+import { avatarClasses } from "@mui/material";
 
 const Dashboard = () => {
     let userData = getUserData();
@@ -15,24 +16,13 @@ const Dashboard = () => {
             .then(users => {
                 setUsers(users);// ok
                 console.log(users)
-            })
+            });
     }, []);
 
-    let actionUser = [];
-    let favMovies = [];
-
-    setTimeout(() => {
-        actionUser = users.filter(user => user._id === userId);// ok
-        favMovies = actionUser[0]['favMovies'];
-        
-    }, 5000);
-
-    console.log(favMovies, "favMovies");
-    if(actionUser !== null || actionUser !== undefined || actionUser.length > 0){
-        console.log(actionUser, "action")
-        favMovies = actionUser[0]['favMovies'];
-
-    }
+    const actionUser = users.filter(user => user._id === userId);// ok -> logging all users
+    console.log(actionUser)//ok -> logging the current user
+    let favMovies = actionUser[0]['favMovies'];
+    console.log(favMovies)// ok -> logging all favourite movies of the current user
 
     return (
         <>
