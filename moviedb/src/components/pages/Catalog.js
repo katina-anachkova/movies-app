@@ -15,7 +15,6 @@ const Catalog = () => {
     return (
         <>
             <section >
-                <section id="hero"></section>
                 {movies.length > 0
                     ? <ul className="flex__list">
                         {movies.map(x => <MovieTemplate key={x._id} movie={x} />)}
