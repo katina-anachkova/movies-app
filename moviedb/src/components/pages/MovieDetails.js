@@ -32,10 +32,17 @@ const MovieDetails = () => {
         let allUsers = await userService.getAllUsers();
 
         const actionUser = allUsers.filter(user => user._id === owner);
+        const favMovies = actionUser[0]['favMovies'];
+        favMovies.push(movie);// non-persisting
 
-        actionUser[0]['favMovies'].push(movie);// non-persisting
+        let user = {
+            email: userData.email,
+            password: userData.password,
+            favMovies: favMovies
+        }
 
-        
+        userService.updateUser(userData.id, user);
+
         setShowFav = false;
     }
 

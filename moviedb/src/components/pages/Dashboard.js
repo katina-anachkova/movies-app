@@ -24,14 +24,24 @@ const Dashboard = () => {
     useEffect(() => {
         userService.getAllUsers()
             .then(users => {
-                setUsers(users);
-                console.log(users)
+                setUsers(users);// ok
             })
     }, []);
 
-    const actionUser = users.filter(user => user._id === userId);
-    console.log(actionUser) // ok
-    // const favMovies = actionUser[0]['favMovies'];
+    /**1. get users
+     * 2. filter out user that made the like
+     * 3. update user in db through server-side for persistence
+     */
+    const actionUser = users.filter(user => user._id === userId);// ok
+    // const favMovies = actionUser[0]['favMovies']; // undefined
+    // const user = {
+    //     favMovies: favMovies
+    // }
+    // console.log(favMovies, 'favourites\n', user, 'user');
+
+
+
+
 
     return (
         <>

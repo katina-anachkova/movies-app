@@ -1,6 +1,6 @@
 - search nav + search page
 - remove from favourites
-- fix logout and favourites request
+- fix logout
 - ratings
 - hide dashboard button
 - movie notes
