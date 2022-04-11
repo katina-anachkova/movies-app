@@ -14,7 +14,6 @@ const Catalog = () => {
 
     return (
         <>
-            <section id="hero"></section>
             <section >
                 {movies.length > 0
                     ? <ul className="flex__list">

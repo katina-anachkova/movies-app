@@ -28,7 +28,6 @@ const Register = ({ onRegister }) => {
         navigate('/');
     }
 
-
     return (
         <div className="form-holder">
             <div className="form-content">

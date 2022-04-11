@@ -29,17 +29,11 @@ const CreateMovie = () => {
                     <h3>Add new movie</h3>
                     <form className="requires-validation" onSubmit={onCreate}>
                         <input className="form-control" type="text" name="title" placeholder="Title" required />
-                        <div className="invalid-feedback">
-                            Title is required!
-                        </div>
+                        
                         <input className="form-control" type="text" name="description" placeholder="Description" required />
-                        <div className="invalid-feedback">
-                            Description is required!
-                        </div>
+                        
                         <input className="form-control" type="text" name="image" placeholder="Image link" required />
-                        <div className="invalid-feedback">
-                            Image link is required!
-                        </div>
+
                         <button id="submit" type="submit" className="button">Create</button>
                     </form>
                 </div>

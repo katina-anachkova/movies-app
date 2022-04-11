@@ -15,6 +15,7 @@ import CreateMovie from './components/feature/Create';
 import Search from './components/pages/SearchBar';
 import SearchBar from './components/pages/SearchBar';
 import Results from './components/pages/SearchResults';
+import { List } from '@mui/material';
 
 function App() {
 
@@ -40,9 +41,13 @@ function App() {
     <AuthCtx.Provider value={userInfo}>
       <div id="container">
         <Header userInfo={userInfo} onLogout={onLogout} />
+        <section id="hero"></section>
+
         <main id="site-content">
           <Routes>
-            <Route path='/' element={<Catalog />} />
+            <Route path='/' element={<SearchBar />} />
+            <Route path='/' element={<List />} />
+            <Route path='/catalog' element={<Catalog />} />
             <Route path='/dashboard' element={<Dashboard user={userInfo} />} />
             <Route path='/create' element={<CreateMovie />} />
             <Route path="/details/:id" element={<MovieDetails />} />

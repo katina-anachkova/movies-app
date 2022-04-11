@@ -15,17 +15,18 @@ const Header = ({ onLogout }) => {
 
     let userNav = <div id="user">
         <span id="user__info">Welcome, {userInfo.user.email}</span>
-        <Link className="button" to="/">Catalogue</Link>
+        <Link className="button" to="/catalog">Catalogue</Link>
         <Link className="button" to="/create">Add</Link>
         <Link className="button" onClick={logout()} to="/">Logout</Link>
     </div>
 
     return (
+        <>
         <header id="site-header">
             <nav className="navbar">
                 <section className="navbar-dashboard">
                     <Link className="button" to="/dashboard">Dashboard</Link>
-                    <SearchBar />
+                    
                     {userInfo.user.isAuthenticated || !sessionStorage.length == 0
                         ? userNav
                         : guestNav
@@ -33,6 +34,7 @@ const Header = ({ onLogout }) => {
                 </section>
             </nav>
         </header>
+        </>
     );
 }
 
