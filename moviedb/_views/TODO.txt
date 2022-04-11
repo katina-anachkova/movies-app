@@ -1,6 +1,3 @@
-- search nav + search page
-- remove from favourites
-- fix logout
+- remove from favourites/ after I fix the dashboard page issue
 - ratings
 - movie notes
-- add movies/ integrate with external database
