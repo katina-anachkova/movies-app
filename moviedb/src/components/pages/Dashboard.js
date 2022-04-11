@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import FavouriteTemplate from "./FavouriteTemplate";
-import * as favouriteService from '../../services/FavouritesService';
 import { getUserData } from "../../util";
 import * as userService from '../../services/users';
 
@@ -9,47 +8,39 @@ const Dashboard = () => {
 
     const userId = userData.id;
 
-    const [movies, setMovies] = useState([]);
     const [users, setUsers] = useState([])
-
-    // useEffect(() => {
-    //     favouriteService.getAllFavs()
-    //         .then((movies) => {
-    //             setMovies(movies);
-    //         })
-    // }, []);
-
-    // const favMovies = movies.filter(movie => movie.owner === userId)
 
     useEffect(() => {
         userService.getAllUsers()
             .then(users => {
                 setUsers(users);// ok
+                console.log(users)
             })
     }, []);
 
-    /**1. get users
-     * 2. filter out user that made the like
-     * 3. update user in db through server-side for persistence
-     */
-    const actionUser = users.filter(user => user._id === userId);// ok
-    // const favMovies = actionUser[0]['favMovies']; // undefined
-    // const user = {
-    //     favMovies: favMovies
-    // }
-    // console.log(favMovies, 'favourites\n', user, 'user');
+    let actionUser = [];
+    let favMovies = [];
 
+    setTimeout(() => {
+        actionUser = users.filter(user => user._id === userId);// ok
+        favMovies = actionUser[0]['favMovies'];
+        
+    }, 5000);
 
+    console.log(favMovies, "favMovies");
+    if(actionUser !== null || actionUser !== undefined || actionUser.length > 0){
+        console.log(actionUser, "action")
+        favMovies = actionUser[0]['favMovies'];
 
-
+    }
 
     return (
         <>
             <section id="hero"></section>
             <section >
-                {movies.length > 0
+                {favMovies.length > 0
                     ? <ul className="flex__list">
-                        {/* {favMovies.map(x => <FavouriteTemplate key={x._id} movie={x} />)} */}
+                        {favMovies.map(x => <FavouriteTemplate key={x._id} movie={x} />)}
                     </ul>
                     : <p className="flex__list">No favourite movies yet!</p>
                 }

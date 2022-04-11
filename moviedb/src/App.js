@@ -12,6 +12,9 @@ import Footer from './components/core/Footer';
 import { logout } from './services/Api';
 import MovieDetails from './components/pages/MovieDetails';
 import CreateMovie from './components/feature/Create';
+import Search from './components/pages/SearchBar';
+import SearchBar from './components/pages/SearchBar';
+import Results from './components/pages/SearchResults';
 
 function App() {
 
@@ -27,7 +30,9 @@ function App() {
 
   const onLogout = () => {
     logout();
+    console.log('logged out');
     util.clearUserData();
+    
   }
 
 
@@ -38,9 +43,10 @@ function App() {
         <main id="site-content">
           <Routes>
             <Route path='/' element={<Catalog />} />
-            <Route path='/dashboard' element={<Dashboard user={userInfo}/>} />
+            <Route path='/dashboard' element={<Dashboard user={userInfo} />} />
             <Route path='/create' element={<CreateMovie />} />
             <Route path="/details/:id" element={<MovieDetails />} />
+            {/* <Route path={`/?s=${searchQuery}`} element={<Results />} /> */}
             <Route path='/login' element={<Login onLogin={onLogin} />} />
             <Route path='/register' element={<Register onRegister={onRegister} />} />
           </Routes>

@@ -1,6 +1,6 @@
 #hero {
   height: 70vh;
-  background-image: url("https://image.shutterstock.com/image-vector/cinema-film-strip-wave-reel-600w-1484469773.jpg");
+  background-image: url("../images/viber_image_2022-04-11_16-44-10-889.jpg");
   background-repeat: none;
   background-position: center center;
   background-size: cover;
@@ -275,4 +275,16 @@ a.button.controls {
 
 .hearts {
   width: 25px;
+}
+
+/*search*/
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

@@ -7,7 +7,10 @@ const MovieTemplate = ({ movie }) => {
             <p className="img"><img alt="movie cover"
                 src={movie.image} />
             </p>
-            <Link className="button" to={`/details/${movie._id}`}>Details</Link>
+            { sessionStorage.length > 0
+            ? <Link className="button" to={`/details/${movie._id}`}>Details</Link>
+            : <Link className="button" to={`/login`}>Details</Link>
+            }
         </li>
     );
 }
