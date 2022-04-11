@@ -41,8 +41,6 @@ function App() {
     <AuthCtx.Provider value={userInfo}>
       <div id="container">
         <Header userInfo={userInfo} onLogout={onLogout} />
-        <section id="hero"></section>
-
         <main id="site-content">
           <Routes>
             <Route path='/' element={<SearchBar />} />

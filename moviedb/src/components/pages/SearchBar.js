@@ -32,13 +32,13 @@ function SearchBar() {
     return (
         <>
             <TextField
-                id="standard-basic"
+                id="search__field"
                 onChange={inputHandler}
                 variant="filled"
                 fullWidth
                 label="Search"
                 size="small"
-                color="warning"
+                color="success"
             />
             <List input={inputText} />
         </>

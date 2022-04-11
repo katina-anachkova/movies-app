@@ -22,18 +22,20 @@ const Header = ({ onLogout }) => {
 
     return (
         <>
-        <header id="site-header">
-            <nav className="navbar">
-                <section className="navbar-dashboard">
-                    <Link className="button" to="/dashboard">Dashboard</Link>
-                    
-                    {userInfo.user.isAuthenticated || !sessionStorage.length == 0
-                        ? userNav
-                        : guestNav
-                    }
-                </section>
-            </nav>
-        </header>
+            <header id="site-header">
+                <nav className="navbar">
+                    <section className="navbar-dashboard">
+                        {!sessionStorage.length == 0
+                            ? <Link className="button" to="/dashboard">Dashboard</Link>
+                            : <Link className="button" to="/login">Dashboard</Link>}
+
+                        {userInfo.user.isAuthenticated || !sessionStorage.length == 0
+                            ? userNav
+                            : guestNav
+                        }
+                    </section>
+                </nav>
+            </header>
         </>
     );
 }
