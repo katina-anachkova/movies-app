@@ -31,9 +31,7 @@ function App() {
 
   const onLogout = () => {
     logout();
-    console.log('logged out');
     util.clearUserData();
-    
   }
 
 
